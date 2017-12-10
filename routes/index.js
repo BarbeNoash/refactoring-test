@@ -1,5 +1,11 @@
 'use strict';
+var express = require('express');
+const router =  express.Router();
 
-export function routeIndex(req, res){
-    res.render('test CHANEL');
-}
+const authHandler = require('../controllers/authController');
+
+router.get('/', authHandler.isAuth, function(req, res) {
+    res.render('index');    
+});
+
+module.exports = router;

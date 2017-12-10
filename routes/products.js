@@ -1,9 +1,10 @@
+'use strict';
 var express = require('express');
-import { isAuth } from '../lib/middleware'
-
 const router =  express.Router();
 
-router.get('/view/:id', isAuth, function(req, res) {
+const authHandler = require('../controllers/authController');
+
+router.get('/view/:id', authHandler.isAuth, function(req, res) {
     var id = req.params.id;
     var sqlite3 = require('sqlite3').verbose();
     let db = new sqlite3.Database('database.sqlite');
@@ -16,7 +17,7 @@ router.get('/view/:id', isAuth, function(req, res) {
     db.close();
 });
 
-router.get('/cart/:id', isAuth, function(req, res) {
+router.get('/cart/:id', authHandler.isAuth, function(req, res) {
     var id = req.params.id;
     var sqlite3 = require('sqlite3').verbose();
     var db = new sqlite3.Database('database.sqlite');
@@ -30,4 +31,4 @@ router.get('/cart/:id', isAuth, function(req, res) {
 });
 
 
-export default router;
+module.exports = router;

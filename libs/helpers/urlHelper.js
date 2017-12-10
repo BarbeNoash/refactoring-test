@@ -1,4 +1,3 @@
-'use strict';
 import URL from 'url-parser';
 
 class urlHelper{

@@ -2,6 +2,16 @@ header{
     padding: 70px 0;
 }
 
+footer{
+    width: 100%;
+    height: 50px;
+    color: $white;
+    bottom: 0px;
+    position: fixed;
+    background-color: $white;
+    padding: 15px 0px;
+}
+
 ul{
     list-style: none;
 }
@@ -28,11 +38,12 @@ section.container{
 }
 
 a[href].btn-primary{
-    outline:none;
+    outline:none; 
 }
 
-a.logo{
+.logo{
     height:55px;
     width:350px;
+    margin : 0px auto;
     background: url("http://www.chanel.com/img/logo_chanel.svg") scroll no-repeat top left;
 }
