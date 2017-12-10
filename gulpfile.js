@@ -57,8 +57,8 @@ gulp.task('clean', () => {
 gulp.task('server', () => {
     nodemon({
         script: 'public/dist/app.js',
-        watch: ['app.js', 'routes/*', 'controllers/*', 'libs/**/*', 'sass/**/*'],
-        ext: 'js json scss png gif jpg svg',
+        watch: ['app.js', 'routes/*', 'controllers/*', 'libs/*', 'sass/*', 'views/*'],
+        ext: 'js json scss png gif jpg svg twig',
         tasks: ['build'],
     }).on('restart', () => {
         gulp.src('public/dist/app.js').pipe(notify('Server successfully restarted'));

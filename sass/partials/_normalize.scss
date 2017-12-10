@@ -1,49 +1,51 @@
-header{
-    padding: 70px 0;
+body {
+    background-color: $black;
 }
 
-footer{
+header {
+    &.main-header {
+        padding-top: 15px;
+        margin-top: 7px;
+    }
+}
+
+nav {
+    text-align: center;
+    &.main-nav {
+        ul {
+            padding-left: 0px;
+            @include main-link($black);
+        }
+    }
+}
+
+footer {
     width: 100%;
-    height: 50px;
-    color: $white;
-    bottom: 0px;
+    height: 25px;
+    font-size: 12px;
+    bottom: 0;
     position: fixed;
-    background-color: $white;
-    padding: 15px 0px;
+    background-color: #fff;
+    padding: 5px 0;
+    @include main-link($black);
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-
-.listing{
-    margin-top: 25px;
-}
-
-.listing li{
-    display: inline-block;
-    width: 40%;
-    margin: 5% 0;
-}
-
-.listing li button{
-    border: none;
-    background: transparent;
-    color: #FFF;
-}
-
-section.container{
+section.container {
     margin-top: 15px;
 }
 
-a[href].btn-primary{
-    outline:none; 
+a[href].btn-primary {
+    outline: none;
 }
 
-.logo{
-    height:55px;
-    width:350px;
-    margin : 0px auto;
+.logo {
+    height: 55px;
+    margin: 0px auto;
     background: url("http://www.chanel.com/img/logo_chanel.svg") scroll no-repeat top left;
+    background-size: 185px;
+    background-position: center;
 }

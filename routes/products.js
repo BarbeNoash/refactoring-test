@@ -11,7 +11,7 @@ router.get('/view/:id', authHandler.isAuth, function(req, res) {
 
     db.get("SELECT * FROM products WHERE id = " + id, function(err, row) {
         console.log(row);
-        res.render('view', {product: row});
+        res.render('product', {product: row});
     });
 
     db.close();

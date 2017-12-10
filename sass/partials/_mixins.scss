@@ -1,0 +1,10 @@
+@mixin main-link($color) {
+    a,
+    a:hover,
+    a:link,
+    a:visited,
+    a:active {
+        color: $color;
+        text-decoration: none;
+    }
+  }

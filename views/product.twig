@@ -1,0 +1,31 @@
+{% extends "layout/_base.html" %}
+
+{% block title %}{{ product.name }}{% endblock %}
+{% block head %}
+    {{ parent() }}
+    {% block css%}
+    <link rel="stylesheet" href="../../dist/styles.css" />
+    {% endblock %}
+{% endblock %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block container %}
+    <section class="container" role="application">
+        <div class="row">
+            <div class="col-4">
+                <figure class="card-product">
+                    <img class="card-img-top" src="../../images/{{ product.image }}" />
+                </figure>
+            </div>
+            <div class="col-8 card-description">
+                <p>{{ product.description }}</p>
+                <p>Stock level: {{ product.stock }}</p>
+                <button class="btn btn-primary btn--standard" onclick="window.location.href='/products/cart/{{ product.id }}'" title="View more">Buy</button>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
